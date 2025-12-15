@@ -8,11 +8,12 @@ const handleLikedChat = chat => {
   return { ...chat, liked: !chat.liked};
 };
 
-// const countLikes = chatData => {
-//   return chatData.reduce((sum, like) => {
-//     return // 
-//   });
-// };
+const countLikes = chatData => {
+  return chatData.reduce((sum, chat) => {
+    return sum + (chat.liked ? 1: 0);
+  }, 0);
+};
+
 const App = () => {
   const [chatData, setChatData] = useState(DATA);
 
@@ -27,10 +28,13 @@ const App = () => {
       });
     });
   };
+
+  const totalLikes = countLikes(chatData);
+
   return (
     <div id="App">
       <header>
-        <h1>Application title</h1>
+        <h1>{totalLikes} ❤️s</h1>
       </header>
       <main>
         {<ChatLog
