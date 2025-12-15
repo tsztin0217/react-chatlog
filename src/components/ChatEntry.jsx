@@ -11,7 +11,7 @@ const ChatEntry = (props) => {
   const likeButtonColor = props.liked ? '❤️' : '🤍';
 
   return (
-    <article className="chat-entry local">
+    <article className={`chat-entry ${props.sender === 'Vladimir' ? 'local' : 'remote'}`}>
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>
