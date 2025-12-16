@@ -72,3 +72,17 @@
 .purple {
   color: purple
 }
+
+.color-controls {
+  background: rgb(173, 238, 238);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+}
+
+.color-picker {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
